@@ -55,10 +55,8 @@ components:
         name: monitor-service-binding-comps
         condition: $parameters.svc-server-domains
         type: ns::service_lbmonitor_binding
-        repeat: $components.lb-comp.outputs.service-members
-        repeat-item: service
         properties:
-          name: $service.properties.name
+          name: $components.lb-comp.outputs.service-members.properties.name
           monitor_name: $parent.properties.monitorname
 outputs: 
   - 
